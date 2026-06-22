@@ -540,7 +540,7 @@ a{color:inherit;text-decoration:none}
     q.once('value', snap => {
       if(!snap.exists()){ if(!append) document.getElementById('wgrid').innerHTML=''; return; }
       const all = [];
-      snap.forEach(c => all.push({key:c.key,...c.val()}));
+      snap.forEach(c => { all.push({key:c.key,...c.val()}); });
       all.reverse();
       const hasMore = all.length > PAGE_SIZE;
       const items = hasMore ? all.slice(0,PAGE_SIZE) : all;
